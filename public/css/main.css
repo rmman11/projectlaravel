@@ -1,0 +1,55 @@
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+     background: url("../images/paper.gif");
+  }
+  .navbar-light .navbar-nav .show > .nav-item, .navbar-light .navbar-nav .nav-item.active {
+    color: rgb(193 54 54 / 90%);
+    background-color: rgb(15, 238, 115);
+}
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 25px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+#clockDisplay {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 50px;
+  color: #333;
+}
