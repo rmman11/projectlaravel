@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreVideoRequest;
 use App\Models\Video;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class VideoUploadController extends Controller
 {
@@ -35,5 +36,25 @@ class VideoUploadController extends Controller
 
         return back()->with('success', 'Video uploaded successfully: ' . $path);
     }
+
+       /* ---   here  i build a function to delete file and from databse video ---*/
+      public function destroy(Request $request,$id) {
+ 
+
+         //asset('/storage/app/public/' . $video->file_path)
+     /*-----------here is video delete-----*/
+      $video = Video::findOrFail($id);
+         $path = $request->file('/storage/app/public/'.$video->file_path);
+     // $video_path = public_path($video->video);
+ if(File::exists($path)){
+           unlink($path);
+       }
+ 
+ 
+      $video->delete();
+        return back()->with('message', 'Video has been deleted!');
+ 
+ 
+     }
 
 }
