@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/videos', [VideoUploadController::class ,'index'])->name('videos.index');
 Route::post('/videos/upload-video', [VideoUploadController::class, 'upload'])->name('upload.videos');
-         Route::delete('/videos/destroy/{id}', [VideoController::class ,'destroy'])->name('videos.destroy');
+         Route::delete('/videos/destroy/{id}', [VideoUploadController::class ,'destroy'])->name('videos.destroy');
 
          
     Route::get('/students', [StudentController::class ,'index'])->name('students.index');
